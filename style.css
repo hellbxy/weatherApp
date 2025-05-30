@@ -1,82 +1,100 @@
-body{
-font-family: 'Roboto', sans-serif;
-background-color: #14213D; 
-margin: 0;
-display:flex;
-justify-content:center;
-flex-direction:column;
-align-items:center;
-color: #FFFFFF;
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #14213d;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
 }
 
-.weatherForm{
-    margin: 20px;
+.weatherForm {
+  margin: 20px;
 }
-.cityName{
-    padding: 10px;
-    width: 300px;
-    border-radius: 10px;
-    border: 2px solid #E5E5E5;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px;
+.cityName {
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  border: 2px solid #e5e5e5;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px;
 }
-button[type="submit"]{
-    padding: 10px;
-    width: 300px;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px;
-    background-color: #FCA311;
-    cursor: pointer;
+button[type="submit"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px;
+  background-color: #fca311;
+  cursor: pointer;
 }
-button[type="submit"]:hover{
-    padding: 10px 20px;
-    background-color: #ff7b00;
-
+button[type="submit"]:hover {
+  padding: 10px 20px;
+  background-color: #ff7b00;
 }
-.card{
-    background: linear-gradient(180deg, hsla(37, 98%, 53%, 1) 0%, rgb(87, 110, 160) 100%);
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px #000;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card {
+  background: linear-gradient(
+    180deg,
+    hsla(37, 98%, 53%, 1) 0%,
+    rgb(87, 110, 160) 100%
+  );
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #000;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-h1{
-    font-size: 3.5rem;
-    margin-top: 0;
-    margin-bottom: 25px;
+.heading{
+font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.5
+  );
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
-p{
-    font-size: 1.5rem;
-    margin: 5px 0;
+h1 {
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding: 20px;
 }
-.tempDisplay{
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 25px;
+p {
+  font-size: 1.5rem;
+  margin: 5px 0;
 }
-.humidityDisplay{
-    font-weight: bold;
-    margin-bottom: 25px;
+.tempDisplay {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
-.weatherDisplay{
-    font-size: 2rem;
-    font-style: italic;
-    margin-bottom: 25px;
+.humidityDisplay {
+  font-weight: bold;
+  margin-bottom: 25px;
 }
-.weatherEmoji{
-    font-size: 7.5rem;
-    margin: 0;
+.weatherDisplay {
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 25px;
 }
-.errorDisplay{
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0;
+.weatherEmoji {
+  font-size: 7.5rem;
+  margin: 0;
+}
+.errorDisplay {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
 }
