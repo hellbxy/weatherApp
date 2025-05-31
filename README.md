@@ -41,9 +41,7 @@ The project consists of three main files:
 *   `style.css`: This file contains all the styling rules. It dictates how the `app.html` elements look, including their colors, sizes, fonts, and positioning on the page.
 *   `script.js`: This file contains the logic of the application. It waits for you to submit a city name, then communicates with the OpenWeatherMap API to get the weather data, and finally updates the `app.html` page to display that data. It also handles showing error messages if something goes wrong.
 
-## Future Ideas
-
-This app is a great starting point! Here are a few ideas for how it could be expanded in the future:
+## Future Updates
 
 *   **More Detailed Forecast:** Show a 5-day forecast instead of just the current weather.
 *   **Unit Conversion:** Allow users to switch between Celsius and Fahrenheit.
