@@ -11,6 +11,9 @@ body {
 
 .weatherForm {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cityName {
   padding: 10px;
@@ -50,17 +53,30 @@ button[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
 }
-.heading{
-font-size: 3.5rem;
+
+.card + .card {
+  margin-top: 20px;
+}
+
+.clothCard {
+  align-self: center;
+  width: min(420px, 100%);
+  min-width: 260px;
+  padding: 30px;
+}
+
+.laundryCard {
+  align-self: center;
+  width: min(420px, 100%);
+  min-width: 260px;
+  padding: 30px;
+}
+.heading {
+  font-size: 3.5rem;
   margin-top: 0;
   margin-bottom: 25px;
   padding: 20px;
-  background-color: rgba(
-    51,
-    51,
-    51,
-    0.5
-  );
+  background-color: rgba(51, 51, 51, 0.5);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
@@ -97,4 +113,96 @@ p {
   font-weight: bold;
   color: rgba(255, 255, 255, 0.75);
   margin: 0;
+}
+
+.forecastContainer {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.forecastTitle {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.forecastList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.forecastItem {
+  display: grid;
+  grid-template-columns: 110px 50px 130px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.forecastDate {
+  font-weight: bold;
+}
+
+.forecastEmoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.forecastTemps {
+  font-weight: bold;
+}
+
+.forecastDesc {
+  opacity: 0.9;
+}
+
+.clothTitle {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.clothSummary {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.clothSentence {
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+  opacity: 0.95;
+  text-align: center;
+}
+
+.clothList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.clothItem {
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.laundryTitle {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.laundrySummary {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.laundrySentence {
+  font-size: 1.6rem;
+  margin: 0;
+  opacity: 0.95;
+  text-align: center;
 }
