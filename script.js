@@ -1,10 +1,41 @@
 const weatherForm = document.querySelector(".weatherForm");
 const cityName = document.querySelector(".cityName");
+const locateBtn = document.querySelector(".locateBtn");
 const weatherCard = document.querySelector(".weatherCard");
 const clothCard = document.querySelector(".clothCard");
 const laundryCard = document.querySelector(".laundryCard");
 const apiKey = "1a4fa94c8e83e28d12952c4ca8d5f0b4";
 const AI_CLOTHING_ENDPOINT = null;
+
+locateBtn?.addEventListener("click", async () => {
+  if (!navigator.geolocation) {
+    displayError("このブラウザは現在地に対応していません。");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    async (pos) => {
+      try {
+        const { latitude, longitude } = pos.coords;
+        const weatherData = await getWeatherByCoords(latitude, longitude);
+        const forecastData = await get5DayForecast(latitude, longitude);
+        displayWeatherInfo(weatherData, forecastData);
+      } catch (error) {
+        console.error(error);
+        displayError("エラーが発生しました。");
+      }
+    },
+    (err) => {
+      console.error(err);
+      if (err.code === err.PERMISSION_DENIED) {
+        displayError("現在地の許可が必要です。");
+        return;
+      }
+      displayError("現在地を取得できませんでした。");
+    },
+    { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
+  );
+});
 
 weatherForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -32,6 +63,15 @@ async function getWeather(city) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&lang=ja`;
   const response = await fetch(apiUrl);
   console.log(response);
+  if (response.ok) {
+    return await response.json();
+  }
+  throw new Error("天気情報が取得できませんでした。");
+}
+
+async function getWeatherByCoords(lat, lon) {
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&appid=${apiKey}&lang=ja`;
+  const response = await fetch(apiUrl);
   if (response.ok) {
     return await response.json();
   }
